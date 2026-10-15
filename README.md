@@ -19,15 +19,19 @@ This repository is the **hub for all my websites**. Every project I ship lives h
 ### 🧰 Utility Bites — *Coming Soon*
 A utility website packed with **many good utilities** — the kind of tools you reach for every day, all in one place. Currently in development.
 
-### 🧮 Calculator
+### 🧮 Calculator — [open it ↗](https://the-creative-master.github.io/Calculator/)
 > very normal calculator.... secret code light mode 25+
 
 A calculator that's more than it seems. Hidden inside is a **secret code** that unlocks **light mode 25+**. Can you find it? 👀
 
-### 🔤 E++
+🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
+
+### 🔤 E++ — [open the IDE ↗](https://the-creative-master.github.io/E-Plus-Plus/)
 > A programming language I made that looks like English, reads like English, and **is** English.
 
-E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++.
+E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++ — and the repo ships a complete online IDE to run it in.
+
+🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
 
 ---
 

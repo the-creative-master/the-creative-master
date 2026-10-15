@@ -26,12 +26,12 @@ A calculator that's more than it seems. Hidden inside is a **secret code** that 
 
 🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
 
-### 🔤 E++ — [open the IDE ↗](https://the-creative-master.github.io/E-Plus-Plus/)
+### 🔤 E++ — [open the IDE ↗](https://the-creative-master.github.io/E-plus-plus/)
 > A programming language I made that looks like English, reads like English, and **is** English.
 
 E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++ — and the repo ships a complete online IDE to run it in.
 
-🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
+🔗 **Live:** [the-creative-master.github.io/E-plus-plus](https://the-creative-master.github.io/E-plus-plus/)
 
 ---
 

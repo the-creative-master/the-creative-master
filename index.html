@@ -9,7 +9,7 @@
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="the-creative-master — the hub" />
-<meta property="og:description" content="Calculator, E++ and the upcoming Utility Bites — live links, live previews." />
+<meta property="og:description" content="Calculator, E++ and the upcoming Utility Bites — straight links to the real sites." />
 <meta property="og:url" content="https://the-creative-master.github.io/the-creative-master/" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%23ff5c8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3Ecm%3C/text%3E%3C/svg%3E" />
@@ -24,7 +24,7 @@
   --bg:#07070b; --card:#0e0e17; --line:rgba(255,255,255,.075); --line-2:rgba(255,255,255,.16);
   --fg:#f4f4f8; --muted:#a0a0b0; --dim:#6c6c7c;
   --violet:#7c5cff; --pink:#ff5c8a; --mint:#4fe3a8; --amber:#ffc46b;
-  --r-xl:24px; --r-lg:18px; --r-md:13px;
+  --r-xl:24px; --r-lg:18px;
   --maxw:1200px; --gutter:clamp(18px,4vw,32px); --nav-h:66px;
   --ease:cubic-bezier(.22,.61,.36,1);
 }
@@ -40,7 +40,8 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:6px}
 .mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace}
 
-.skip{position:fixed;top:10px;left:10px;z-index:200;padding:10px 16px;border-radius:10px;background:var(--violet);color:#fff;font-weight:600;font-size:14px;text-decoration:none;transform:translateY(-160%);transition:transform .2s var(--ease)}
+.skip{position:fixed;top:10px;left:10px;z-index:200;padding:10px 16px;border-radius:10px;background:var(--violet);color:#fff;
+  font-weight:600;font-size:14px;text-decoration:none;transform:translateY(-160%);transition:transform .2s var(--ease)}
 .skip:focus{transform:translateY(0)}
 
 /* ============ BACKGROUND ============ */
@@ -61,6 +62,7 @@ a{color:inherit}
 .orb.b{width:380px;height:380px;background:#ff3d7f;top:36%;right:-170px;animation-delay:-8s}
 .orb.c{width:320px;height:320px;background:#19c98a;bottom:-150px;left:34%;animation-delay:-16s}
 @keyframes drift{0%,100%{transform:translate3d(0,0,0) scale(1)}33%{transform:translate3d(34px,-26px,0) scale(1.05)}66%{transform:translate3d(-28px,30px,0) scale(.96)}}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.35}}
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:120;transform-origin:0 50%;transform:scaleX(0);
   background:linear-gradient(90deg,var(--violet),var(--pink) 55%,var(--mint));box-shadow:0 0 14px rgba(124,92,255,.6)}
 
@@ -101,49 +103,26 @@ a{color:inherit}
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 .mobile-menu.open{display:block}
 .mobile-menu .wrap{padding-block:14px 20px;display:flex;flex-direction:column;gap:4px}
-.mobile-menu a{padding:13px 14px;border-radius:12px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;
-  display:flex;align-items:center;justify-content:space-between;border:1px solid transparent}
+.mobile-menu a,.mobile-menu button{padding:13px 14px;border-radius:12px;text-decoration:none;color:var(--muted);font-weight:600;font-size:15px;
+  display:flex;align-items:center;justify-content:space-between;border:1px solid transparent;background:none;font-family:inherit;cursor:pointer;width:100%;text-align:left}
 .mobile-menu a:hover{color:var(--fg);background:rgba(255,255,255,.05);border-color:var(--line)}
 .mobile-menu a.gh{color:var(--fg);background:rgba(124,92,255,.12);border-color:rgba(124,92,255,.35);margin-top:6px}
 
 /* ============ HERO ============ */
-.hero{padding-block:clamp(44px,6vw,78px) clamp(36px,5vw,64px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,4.5vw,56px);align-items:center}
+.hero{padding-block:clamp(44px,6vw,80px) clamp(36px,5vw,64px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,4.5vw,56px);align-items:center}
 .hero-copy{min-width:0}
 .kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;padding:6px 14px 6px 11px;border-radius:999px;
   border:1px solid var(--line-2);background:rgba(255,255,255,.035);
   font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--muted)}
 .kicker .live{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(79,227,168,.16);animation:blip 2.2s infinite}
-@keyframes blip{0%,100%{opacity:1}50%{opacity:.35}}
-h1{font-size:clamp(38px,6vw,72px);font-weight:900;letter-spacing:-.045em;line-height:.97;margin-bottom:20px}
+h1{font-size:clamp(38px,6vw,74px);font-weight:900;letter-spacing:-.045em;line-height:.97;margin-bottom:20px}
 h1 .l2{display:block}
 .grad{background:linear-gradient(100deg,#fff 0%,#b9a6ff 26%,var(--pink) 58%,var(--mint) 92%);background-size:220% 220%;
   -webkit-background-clip:text;background-clip:text;color:transparent;animation:slide 9s ease-in-out infinite}
 @keyframes slide{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.lead{font-size:clamp(15.5px,1.45vw,18px);color:var(--muted);max-width:54ch;margin-bottom:28px}
+.lead{font-size:clamp(15.5px,1.45vw,18px);color:var(--muted);max-width:52ch;margin-bottom:28px}
 .lead strong{color:var(--fg);font-weight:600}
-
-/* the real links, right at the top */
-.jump{display:grid;gap:10px;margin-bottom:26px}
-.jump a,.jump button{
-  display:flex;align-items:center;gap:13px;width:100%;text-align:left;
-  padding:14px 16px;border-radius:14px;text-decoration:none;cursor:pointer;
-  border:1px solid var(--line);background:rgba(255,255,255,.028);color:inherit;font:inherit;
-  transition:border-color .25s,background .25s,transform .25s var(--ease);
-}
-.jump a:hover{border-color:var(--line-2);background:rgba(255,255,255,.06);transform:translateX(4px)}
-@supports (color:color-mix(in srgb,red 50%,transparent)){.jump a:hover{border-color:color-mix(in srgb,var(--ac) 55%,transparent)}}
-.jump .ji{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px;flex-shrink:0;
-  background:rgba(255,255,255,.05);border:1px solid var(--line)}
-.jump .jt{min-width:0}
-.jump .jt b{display:block;font-size:14.5px;font-weight:700;letter-spacing:-.01em}
-.jump .jt span{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jump .jgo{margin-left:auto;flex-shrink:0;font-size:13px;font-weight:700;color:var(--ac)}
-.jump .soon{cursor:not-allowed;opacity:.72;border-style:dashed}
-.jump .soon:hover{transform:none;background:rgba(255,255,255,.028);border-color:var(--line)}
-.jump .soon .jgo{color:var(--dim)}
-
 .hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-lg);
   background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));overflow:hidden}
 .hero-stats div{padding:14px 16px;border-left:1px solid var(--line)}
@@ -152,26 +131,33 @@ h1 .l2{display:block}
 .hero-stats span{font-size:11px;color:var(--dim);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
 .v{color:var(--mint)} .p{color:var(--pink)}
 
-/* ============ LIVE FRAME (real iframes only) ============ */
-.frame{border-radius:var(--r-lg);border:1px solid var(--line-2);overflow:hidden;background:#000;
-  box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
-.frame-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.035)}
-.dots{display:flex;gap:6px;flex-shrink:0}
-.dots i{width:9px;height:9px;border-radius:50%}
-.dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
-.frame-url{flex:1;min-width:0;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);
-  background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:7px;padding:4px 9px;
+/* ============ LINK LIST (the real destinations) ============ */
+.jump{display:grid;gap:10px}
+.jump-head{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.jump a,.jump button{
+  --ac:var(--violet);
+  position:relative;display:flex;align-items:center;gap:14px;width:100%;text-align:left;overflow:hidden;
+  padding:17px 18px;border-radius:16px;text-decoration:none;cursor:pointer;font:inherit;color:inherit;
+  border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.014)),var(--card);
+  transition:border-color .28s,transform .28s var(--ease),box-shadow .28s;
+}
+.jump a::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac);opacity:.75;transition:opacity .28s,width .28s var(--ease)}
+.jump a:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:0 22px 44px -24px rgba(0,0,0,.9)}
+.jump a:hover::before{width:5px;opacity:1}
+.jump .ji{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:19px;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2)}
+.jump .jt{min-width:0;flex:1}
+.jump .jt b{display:block;font-size:15.5px;font-weight:700;letter-spacing:-.015em}
+.jump .jt span{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.frame-live{display:flex;align-items:center;gap:6px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
-.frame-live i{width:6px;height:6px;border-radius:50%;background:var(--mint);animation:blip 2.2s infinite}
-.frame-win{position:relative;height:clamp(280px,34vw,420px);background:#0b0b12}
-.frame-win iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;
-  pointer-events:none;background:transparent}
-.frame-win::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,transparent 62%,rgba(7,7,11,.72) 100%)}
-.frame-fallback{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;
-  padding:20px;color:var(--dim);font-family:'JetBrains Mono',monospace;font-size:12px}
+.jump .jgo{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;font-size:13px;font-weight:700;color:var(--fg)}
+.jump .jgo i{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-size:13px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.04);transition:transform .3s var(--ease),background .3s,color .3s,border-color .3s}
+.jump a:hover .jgo i{background:var(--ac);border-color:var(--ac);color:#0a0a0f;transform:rotate(45deg)}
+.jump .soon{cursor:not-allowed;border-style:dashed;background:rgba(255,255,255,.02);opacity:.85}
+.jump .soon:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.jump .soon .jgo{color:var(--dim)}
+.jump .soon .jgo i{transform:none}
 
 /* ============ SECTION HEAD ============ */
 .head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:clamp(28px,3.6vw,42px)}
@@ -187,62 +173,67 @@ h2{font-size:clamp(27px,4vw,44px);font-weight:800;letter-spacing:-.035em;line-he
 /* ============ PROJECT CARDS ============ */
 .bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
 .pcard{--ac:var(--violet);position:relative;grid-column:span 3;display:flex;flex-direction:column;
-  padding:24px;border-radius:var(--r-xl);overflow:hidden;text-decoration:none;color:inherit;isolation:isolate;
+  padding:26px;border-radius:var(--r-xl);overflow:hidden;text-decoration:none;color:inherit;isolation:isolate;
   background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.012)),var(--card);
   border:1px solid var(--line);transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
 .pcard::before{content:'';position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s;
-  background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.07),transparent 62%);
-  background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--ac) 15%,transparent),transparent 62%)}
+  background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.07),transparent 62%)}
+@supports (color:color-mix(in srgb,red 50%,transparent)){
+  .pcard::before{background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--ac) 15%,transparent),transparent 62%)}
+}
 .pcard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;z-index:2;
   background:linear-gradient(90deg,var(--ac),transparent 78%);opacity:.6;transition:opacity .3s}
 .pcard:hover{transform:translateY(-5px);border-color:var(--line-2);box-shadow:0 28px 60px -28px rgba(0,0,0,.85)}
 .pcard:hover::before,.pcard:hover::after{opacity:1}
-.pcard.wide{grid-column:span 4}
-.pcard.slim{grid-column:span 2}
 .pcard.full{grid-column:span 6}
 
-.p-top{display:flex;align-items:center;gap:13px;margin-bottom:14px}
-.p-ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:20px;flex-shrink:0;
-  background:rgba(255,255,255,.05);border:1px solid var(--line-2);
-  background:color-mix(in srgb,var(--ac) 14%,transparent);border:1px solid color-mix(in srgb,var(--ac) 34%,transparent);
-  box-shadow:0 0 24px -10px var(--ac)}
-.p-titles{min-width:0}
-.pcard h3{font-size:clamp(20px,2.1vw,24px);font-weight:800;letter-spacing:-.03em;line-height:1.2}
-.p-url{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.badge{display:inline-flex;align-items:center;gap:7px;margin-left:auto;padding:5px 11px;border-radius:999px;white-space:nowrap;
-  font-size:11.5px;font-weight:700;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--muted);flex-shrink:0}
+.p-top{display:flex;align-items:flex-start;gap:13px;margin-bottom:15px}
+.p-ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:21px;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2);box-shadow:0 0 24px -12px var(--ac)}
+@supports (color:color-mix(in srgb,red 50%,transparent)){
+  .p-ico{background:color-mix(in srgb,var(--ac) 14%,transparent);border-color:color-mix(in srgb,var(--ac) 34%,transparent)}
+}
+.p-titles{min-width:0;flex:1}
+.pcard h3{font-size:clamp(21px,2.2vw,25px);font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-bottom:3px}
+.p-url{display:block;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pcard:hover .p-url{color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;white-space:nowrap;flex-shrink:0;
+  font-size:11.5px;font-weight:700;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--muted)}
 .badge i{width:6px;height:6px;border-radius:50%;background:currentColor}
 .badge.live{color:var(--mint);border-color:rgba(79,227,168,.36);background:rgba(79,227,168,.09)}
 .badge.soon{color:var(--pink);border-color:rgba(255,92,138,.36);background:rgba(255,92,138,.09)}
 .badge.soon i{animation:blip 1.7s infinite}
-.p-desc{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+
+.p-desc{color:var(--muted);font-size:14.6px;margin-bottom:16px}
 .p-desc b{color:var(--fg);font-weight:600}
-.p-feat{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.p-feat{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
 .p-feat li{font-size:11.8px;font-weight:500;color:var(--muted);padding:5px 10px;border-radius:8px;
   background:rgba(255,255,255,.035);border:1px solid var(--line)}
-.pcard .frame{margin-bottom:18px}
-.p-foot{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px}
-.p-go{margin-left:auto;display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700}
-.p-go i{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-style:normal;
-  border:1px solid var(--line-2);background:rgba(255,255,255,.04);
-  transition:transform .3s var(--ease),background .3s,border-color .3s,color .3s}
-.pcard:hover .p-go i{background:var(--ac);border-color:var(--ac);color:#0a0a0f;transform:rotate(45deg)}
-.p-hint{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--dim)}
 
-/* Utility Bites: no live site, so no preview — nothing faked */
+/* the actual CTA inside the card */
+.p-open{margin-top:auto;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.035);
+  transition:background .3s,border-color .3s,color .3s}
+.p-open b{font-size:14.5px;font-weight:700;letter-spacing:-.01em}
+.p-open small{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);font-weight:400}
+.p-open i{margin-left:auto;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:14px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.04);flex-shrink:0;
+  transition:transform .3s var(--ease),background .3s,border-color .3s,color .3s}
+.pcard:hover .p-open{background:var(--ac);border-color:var(--ac);color:#0a0a0f}
+.pcard:hover .p-open small{color:rgba(0,0,0,.6)}
+.pcard:hover .p-open i{background:rgba(0,0,0,.22);border-color:rgba(0,0,0,.28);color:#fff;transform:rotate(45deg)}
+
+/* Utility Bites banner — no live site, nothing faked */
 .pcard.locked{cursor:pointer;border-style:dashed;border-color:rgba(255,255,255,.15);
   background:repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 10px,transparent 10px 20px),var(--card)}
 .pcard.locked:hover{border-color:rgba(255,92,138,.42);box-shadow:0 24px 50px -26px rgba(255,92,138,.4)}
-.empty{flex:1;min-height:190px;display:grid;place-content:center;justify-items:center;gap:12px;text-align:center;
-  border:1px dashed var(--line-2);border-radius:var(--r-lg);background:rgba(255,255,255,.02);padding:24px;margin-bottom:18px}
-.empty .ei{font-size:26px}
-.empty b{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
-.empty span{font-size:13px;color:var(--dim);max-width:30ch}
-
-/* full-width split */
-.split{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(22px,3vw,40px);align-items:center}
-.split .frame{margin:0}
-.split .frame-win{height:clamp(320px,38vw,470px)}
+.ub{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(20px,3vw,38px);align-items:center}
+.nowhere{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;
+  padding:26px 20px;border:1px dashed var(--line-2);border-radius:var(--r-lg);background:rgba(255,255,255,.02)}
+.nowhere .ni{font-size:24px}
+.nowhere b{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink)}
+.nowhere span{font-size:12.8px;color:var(--dim);max-width:30ch}
 
 .note{margin-top:18px;padding:18px 22px;border-radius:var(--r-lg);display:flex;align-items:center;gap:15px;
   border:1px solid rgba(255,196,107,.26);background:linear-gradient(100deg,rgba(255,196,107,.09),rgba(124,92,255,.07));
@@ -298,10 +289,11 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
 .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--dim);margin-bottom:13px;font-weight:500}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.foot-col a{color:var(--muted);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:7px;transition:color .2s,gap .2s}
+.foot-col a,.foot-col button{color:var(--muted);text-decoration:none;font-size:14px;display:inline-flex;align-items:center;gap:7px;
+  background:none;border:0;padding:0;font-family:inherit;cursor:pointer;transition:color .2s,gap .2s}
 .foot-col a:hover{color:var(--fg);gap:11px}
-.foot-col a.off{color:var(--dim);cursor:not-allowed}
-.foot-col a.off:hover{color:var(--dim);gap:7px}
+.foot-col .off{color:var(--dim);cursor:not-allowed}
+.foot-col .off:hover{color:var(--dim);gap:7px}
 .foot-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--line);
   color:var(--dim);font-size:13px}
 
@@ -320,10 +312,9 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:1040px){
-  .hero-grid{grid-template-columns:1fr;gap:38px}
-  .pcard.wide,.pcard.slim{grid-column:span 6}
-  .split{grid-template-columns:1fr}
-  .split .frame{margin-top:2px}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .pcard{grid-column:span 6}
+  .ub{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr}
   .about-sticky{position:static}
 }
@@ -333,12 +324,10 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
   .burger{display:flex}
   .head{flex-direction:column;align-items:flex-start;gap:14px}
   .head-side{text-align:left}
-  .pcard{grid-column:span 6;padding:20px}
-  .frame-win{height:240px}
-  .split .frame-win{height:280px}
+  .pcard{padding:21px}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot-brand{grid-column:span 2}
-  .frame-url{font-size:10px}
+  .jump .jt span{font-size:10.5px}
 }
 @media (max-width:430px){
   .hero-stats{grid-template-columns:1fr}
@@ -347,6 +336,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
   .foot-grid{grid-template-columns:1fr}
   .foot-brand{grid-column:span 1}
   .btns .btn{width:100%;justify-content:center}
+  .jump .jgo span{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -386,11 +376,11 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
   <div class="mobile-menu" id="mobileMenu">
     <div class="wrap">
       <a href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener">🧮 Calculator <span class="mono">↗</span></a>
-      <a href="https://the-creative-master.github.io/E-plus-plus/" target="_blank" rel="noopener">🔤 E++ <span class="mono">↗</span></a>
-      <a href="#" data-bites>🧰 Utility Bites <span class="mono">soon</span></a>
+      <a href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener">🔤 E++ <span class="mono">↗</span></a>
+      <button type="button" data-bites>🧰 Utility Bites <span class="mono">soon</span></button>
+      <a href="https://github.com/the-creative-master" target="_blank" rel="noopener">🐙 GitHub <span class="mono">↗</span></a>
       <a href="#projects" data-close>Projects</a>
       <a href="#about" data-close>About</a>
-      <a class="gh" href="https://github.com/the-creative-master" target="_blank" rel="noopener">🐙 GitHub ↗</a>
     </div>
   </div>
 </header>
@@ -406,54 +396,39 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
       <h1 class="reveal" style="--d:60ms">Everything I build,<span class="l2"><span class="grad">one click away.</span></span></h1>
       <p class="lead reveal" style="--d:120ms">
         I'm <strong>the-creative-master</strong> — a programmer from the Middle East making
-        <strong>useful, interesting websites</strong>. No filler here: these links go straight to the real projects.
+        <strong>useful, interesting websites</strong>. No previews, no filler: these go straight to the real projects.
       </p>
-
-      <div class="jump reveal" style="--d:180ms">
-        <a href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener" style="--ac:var(--violet)">
-          <span class="ji">🧮</span>
-          <span class="jt"><b>Calculator</b><span>the-creative-master.github.io/Calculator/</span></span>
-          <span class="jgo">Open ↗</span>
-        </a>
-        <a href="https://the-creative-master.github.io/E-plus-plus/" target="_blank" rel="noopener" style="--ac:var(--mint)">
-          <span class="ji">🔤</span>
-          <span class="jt"><b>E++</b><span>the-creative-master.github.io/E-plus-plus/</span></span>
-          <span class="jgo">Open ↗</span>
-        </a>
-        <a href="https://github.com/the-creative-master" target="_blank" rel="noopener" style="--ac:var(--pink)">
-          <span class="ji">🐙</span>
-          <span class="jt"><b>GitHub</b><span>github.com/the-creative-master</span></span>
-          <span class="jgo">Open ↗</span>
-        </a>
-        <button type="button" class="soon" data-bites style="--ac:var(--amber)">
-          <span class="ji">🧰</span>
-          <span class="jt"><b>Utility Bites</b><span>not live yet — no link</span></span>
-          <span class="jgo">Soon</span>
-        </button>
-      </div>
-
-      <div class="hero-stats reveal" style="--d:240ms">
+      <div class="hero-stats reveal" style="--d:180ms">
         <div><b>3</b><span>Projects</span></div>
         <div><b class="v">2</b><span>Live now</span></div>
         <div><b class="p">1</b><span>In the works</span></div>
       </div>
     </div>
 
-    <!-- real, live Calculator — not a mockup -->
-    <div class="reveal" style="--d:180ms">
-      <a class="frame" href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener"
-         style="display:block;text-decoration:none;color:inherit" aria-label="Open the Calculator (live preview shown)">
-        <div class="frame-bar">
-          <span class="dots"><i></i><i></i><i></i></span>
-          <span class="frame-url">https://the-creative-master.github.io/Calculator/</span>
-          <span class="frame-live"><i></i>live</span>
-        </div>
-        <div class="frame-win">
-          <div class="frame-fallback">loading the real site…<br>click anywhere to open it ↗</div>
-          <iframe data-src="https://the-creative-master.github.io/Calculator/" title="Live preview of the Calculator"
-                  loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-        </div>
-      </a>
+    <div class="reveal" style="--d:150ms">
+      <div class="jump-head">go directly to ↗</div>
+      <div class="jump">
+        <a href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener" style="--ac:var(--violet)">
+          <span class="ji">🧮</span>
+          <span class="jt"><b>Calculator</b><span>the-creative-master.github.io/Calculator/</span></span>
+          <span class="jgo"><span>Open</span><i>↗</i></span>
+        </a>
+        <a href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener" style="--ac:var(--mint)">
+          <span class="ji">🔤</span>
+          <span class="jt"><b>E++</b><span>the-creative-master.github.io/E-Plus-Plus/</span></span>
+          <span class="jgo"><span>Open</span><i>↗</i></span>
+        </a>
+        <a href="https://github.com/the-creative-master" target="_blank" rel="noopener" style="--ac:var(--pink)">
+          <span class="ji">🐙</span>
+          <span class="jt"><b>GitHub</b><span>github.com/the-creative-master</span></span>
+          <span class="jgo"><span>Open</span><i>↗</i></span>
+        </a>
+        <button type="button" class="soon" data-bites>
+          <span class="ji">🧰</span>
+          <span class="jt"><b>Utility Bites</b><span>not live yet — no URL</span></span>
+          <span class="jgo"><span>Soon</span><i>⋯</i></span>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -464,8 +439,8 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
     <div class="head reveal">
       <div class="head-txt">
         <span class="tag">projects</span>
-        <h2>Live previews. Real links.</h2>
-        <p>What you see inside each card is the actual website, embedded. Click anywhere on a card and it opens in a new tab.</p>
+        <h2>Three projects. Real links.</h2>
+        <p>Every card opens the actual website in a new tab. Nothing here is a stand-in.</p>
       </div>
       <div class="head-side"><div><b>03</b> projects</div><div><b>02</b> deployed</div></div>
     </div>
@@ -473,7 +448,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
     <div class="bento">
 
       <!-- CALCULATOR -->
-      <a class="pcard wide reveal" style="--ac:var(--violet);--d:60ms"
+      <a class="pcard reveal" style="--ac:var(--violet);--d:60ms"
          href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener">
         <div class="p-top">
           <span class="p-ico">🧮</span>
@@ -483,90 +458,64 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
           </span>
           <span class="badge live"><i></i>Live</span>
         </div>
-        <p class="p-desc"><b>&gt; very normal calculator....</b> Real order of operations, phone-style percent, keyboard support — and a secret code that unlocks light mode.</p>
+        <p class="p-desc"><b>&gt; very normal calculator....</b> A clean, fast browser calculator — proper order of operations, phone-style percent, and a secret code that unlocks light mode.</p>
         <ul class="p-feat">
-          <li>2 + 3 × 4 = 14</li><li>0.1 + 0.2 = 0.3</li><li>keyboard shortcuts</li><li>installable</li><li>secret: light mode 25+</li>
+          <li>2 + 3 × 4 = 14</li><li>live result preview</li><li>phone-style %</li><li>± &amp; backspace</li>
+          <li>0.1 + 0.2 = 0.3</li><li>friendly errors</li><li>full keyboard support</li><li>installable</li>
         </ul>
-        <div class="frame">
-          <div class="frame-bar">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <span class="frame-url">https://the-creative-master.github.io/Calculator/</span>
-            <span class="frame-live"><i></i>live</span>
-          </div>
-          <div class="frame-win">
-            <div class="frame-fallback">loading the real site…<br>click to open it ↗</div>
-            <iframe data-src="https://the-creative-master.github.io/Calculator/" title="Live preview of the Calculator"
-                    loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-          </div>
-        </div>
-        <div class="p-foot">
-          <span class="p-hint">opens in a new tab</span>
-          <span class="p-go">Open Calculator <i>↗</i></span>
-        </div>
+        <span class="p-open">
+          <span><b>Open Calculator</b><small>https://the-creative-master.github.io/Calculator/</small></span>
+          <i>↗</i>
+        </span>
       </a>
-
-      <!-- UTILITY BITES — no live site, so nothing is faked -->
-      <div class="pcard slim locked reveal" id="bitesCard" style="--ac:var(--pink);--d:130ms"
-           role="button" tabindex="0" aria-label="Utility Bites — not live yet">
-        <div class="p-top">
-          <span class="p-ico">🧰</span>
-          <span class="p-titles">
-            <h3>Utility Bites</h3>
-            <span class="p-url">no link yet</span>
-          </span>
-          <span class="badge soon"><i></i>Soon</span>
-        </div>
-        <p class="p-desc">
-          <b>&gt; many utilities, many categories.</b> Convert a file, find a coding IDE, basically anything —
-          without the paywalled, unsuitable or plain bad options.
-        </p>
-        <div class="empty">
-          <span class="ei">🔒</span>
-          <b>not live yet</b>
-          <span>There's no URL to send you to. This one goes nowhere on purpose until it ships.</span>
-        </div>
-        <div class="p-foot">
-          <span class="p-hint">click for status</span>
-          <span class="p-go">Coming soon <i>⋯</i></span>
-        </div>
-      </div>
 
       <!-- E++ -->
-      <a class="pcard full reveal" style="--ac:var(--mint);--d:200ms"
-         href="https://the-creative-master.github.io/E-plus-plus/" target="_blank" rel="noopener">
-        <div class="split">
+      <a class="pcard reveal" style="--ac:var(--mint);--d:130ms"
+         href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener">
+        <div class="p-top">
+          <span class="p-ico">🔤</span>
+          <span class="p-titles">
+            <h3>E++</h3>
+            <span class="p-url">the-creative-master.github.io/E-Plus-Plus/</span>
+          </span>
+          <span class="badge live"><i></i>Live</span>
+        </div>
+        <p class="p-desc"><b>&gt; looks like English, reads like English, and is English.</b> The language, plus the online IDE that runs it — editor, console, files and all.</p>
+        <ul class="p-feat">
+          <li>online IDE</li><li>syntax highlighting</li><li>run / stop</li><li>console</li><li>file explorer</li>
+          <li>.eppl &amp; .eppla</li><li>libraries</li><li>Python runner</li><li>tutorial</li><li>standalone runtime</li>
+        </ul>
+        <span class="p-open">
+          <span><b>Open E++</b><small>https://the-creative-master.github.io/E-Plus-Plus/</small></span>
+          <i>↗</i>
+        </span>
+      </a>
+
+      <!-- UTILITY BITES — no live site, so no preview and no link -->
+      <div class="pcard full locked reveal" id="bitesCard" style="--ac:var(--pink);--d:200ms"
+           role="button" tabindex="0" aria-label="Utility Bites — not live yet">
+        <div class="ub">
           <div>
             <div class="p-top">
-              <span class="p-ico">🔤</span>
+              <span class="p-ico">🧰</span>
               <span class="p-titles">
-                <h3>E++</h3>
-                <span class="p-url">the-creative-master.github.io/E-plus-plus/</span>
+                <h3>Utility Bites</h3>
+                <span class="p-url">no URL yet</span>
               </span>
-              <span class="badge live"><i></i>Live</span>
+              <span class="badge soon"><i></i>Coming soon</span>
             </div>
-            <p class="p-desc"><b>&gt; looks like English, reads like English, and is English.</b> The language plus the online IDE that runs it.</p>
-            <ul class="p-feat">
-              <li>online IDE</li><li>syntax highlighting</li><li>file explorer</li><li>libraries</li><li>tutorial</li>
-            </ul>
-            <div class="p-foot" style="border-top:0;padding-top:4px">
-              <span class="p-hint">opens in a new tab</span>
-              <span class="p-go">Open E++ <i>↗</i></span>
-            </div>
+            <p class="p-desc" style="margin-bottom:0">
+              <b>&gt; many utilities, many categories.</b> Ever needed to convert a file or find a coding IDE, and every
+              option was paywalled, unsuitable or just plain bad? That's what this is for — it's just not live yet.
+            </p>
           </div>
-          <div class="frame">
-            <div class="frame-bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="frame-url">https://the-creative-master.github.io/E-plus-plus/</span>
-              <span class="frame-live"><i></i>live</span>
-            </div>
-            <div class="frame-win">
-              <div class="frame-fallback">loading the real IDE…<br>click to open it ↗</div>
-              <iframe data-src="https://the-creative-master.github.io/E-plus-plus/" title="Live preview of the E++ IDE"
-                      loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-            </div>
+          <div class="nowhere">
+            <span class="ni">🔒</span>
+            <b>not live yet</b>
+            <span>There's no link to send you to, so this one goes nowhere on purpose. Click for status.</span>
           </div>
         </div>
-      </a>
+      </div>
 
     </div>
 
@@ -617,7 +566,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
           @the-creative-master
         </a>
         <a class="btn btn-ghost" href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener">🧮 Calculator ↗</a>
-        <a class="btn btn-ghost" href="https://the-creative-master.github.io/E-plus-plus/" target="_blank" rel="noopener">🔤 E++ ↗</a>
+        <a class="btn btn-ghost" href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener">🔤 E++ ↗</a>
       </div>
       <div class="contact-meta">
         <span>🌍 Sharjah, UAE</span>
@@ -640,8 +589,8 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
         <h5>Projects</h5>
         <ul>
           <li><a href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener">🧮 Calculator ↗</a></li>
-          <li><a href="https://the-creative-master.github.io/E-plus-plus/" target="_blank" rel="noopener">🔤 E++ ↗</a></li>
-          <li><a class="off" href="#" data-bites aria-disabled="true">🧰 Utility Bites — soon</a></li>
+          <li><a href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener">🔤 E++ ↗</a></li>
+          <li><button type="button" class="off" data-bites aria-disabled="true">🧰 Utility Bites — soon</button></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -669,18 +618,6 @@ footer{border-top:1px solid var(--line);padding-block:40px 30px}
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ---- real iframes: only load when they scroll near the viewport ---- */
-  var frames = document.querySelectorAll('iframe[data-src]');
-  function loadFrame(f){ if (!f.src) f.src = f.dataset.src; }
-  if ('IntersectionObserver' in window) {
-    var fio = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting) { loadFrame(e.target); fio.unobserve(e.target); } });
-    }, {rootMargin:'300px'});
-    frames.forEach(function(f){ fio.observe(f); });
-  } else {
-    frames.forEach(loadFrame);
-  }
 
   /* ---- scroll progress + nav state ---- */
   var bar = document.getElementById('progress'), nav = document.getElementById('nav'), ticking = false;

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>the-creative-master — Hub</title>
+<meta name="description" content="A hub of websites and projects by the-creative-master: a programmer from the Middle East who builds useful, interesting websites with AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-2: #12121a;
+    --card: #16161f;
+    --card-2: #1c1c28;
+    --border: rgba(255,255,255,0.08);
+    --border-hi: rgba(255,255,255,0.18);
+    --fg: #f5f5f7;
+    --muted: #9a9aa8;
+    --dim: #6b6b78;
+    --accent: #7c5cff;
+    --accent-2: #ff5c8a;
+    --accent-3: #5cffb1;
+    --glow: rgba(124,92,255,0.35);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* animated gradient background */
+  .bg-layer {
+    position: fixed; inset: 0; z-index: -2;
+    background:
+      radial-gradient(60% 50% at 20% 10%, rgba(124,92,255,0.25), transparent 60%),
+      radial-gradient(50% 40% at 80% 20%, rgba(255,92,138,0.18), transparent 60%),
+      radial-gradient(60% 50% at 50% 90%, rgba(92,255,177,0.12), transparent 60%),
+      var(--bg);
+  }
+  .bg-grid {
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+  .orb {
+    position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.5; z-index: -1;
+    animation: float 18s ease-in-out infinite;
+  }
+  .orb.o1 { width: 420px; height: 420px; background: var(--accent); top: -120px; left: -120px; }
+  .orb.o2 { width: 360px; height: 360px; background: var(--accent-2); top: 40%; right: -140px; animation-delay: -6s; }
+  .orb.o3 { width: 300px; height: 300px; background: var(--accent-3); bottom: -100px; left: 30%; animation-delay: -12s; }
+  @keyframes float {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(40px,-30px) scale(1.05); }
+    66% { transform: translate(-30px,40px) scale(0.95); }
+  }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    background: rgba(10,10,15,0.6);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
+  .logo-mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center; font-family: 'JetBrains Mono', monospace;
+    font-size: 14px; font-weight: 700; color: #fff;
+    box-shadow: 0 0 24px var(--glow);
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--fg); }
+  .nav-cta {
+    padding: 8px 16px; border-radius: 10px; border: 1px solid var(--border-hi);
+    background: rgba(255,255,255,0.04); color: var(--fg); font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all .2s;
+  }
+  .nav-cta:hover { background: rgba(255,255,255,0.08); border-color: var(--accent); }
+
+  /* hero */
+  .hero { padding: 120px 0 80px; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border-hi);
+    background: rgba(255,255,255,0.03); font-size: 13px; color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-3); box-shadow: 0 0 10px var(--accent-3); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .4; } }
+  h1 {
+    font-size: clamp(44px, 7vw, 84px); font-weight: 900; letter-spacing: -0.04em; line-height: 0.95;
+    margin-bottom: 24px;
+  }
+  h1 .grad {
+    background: linear-gradient(120deg, #fff 0%, var(--accent) 40%, var(--accent-2) 75%, var(--accent-3) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    background-size: 200% 200%; animation: gradshift 8s ease infinite;
+  }
+  @keyframes gradshift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+  .hero p.lead { font-size: 19px; color: var(--muted); max-width: 560px; margin-bottom: 36px; }
+  .hero p.lead strong { color: var(--fg); font-weight: 600; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px;
+    border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none;
+    transition: all .25s; border: 1px solid transparent; cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff; box-shadow: 0 10px 40px -10px var(--glow);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 50px -10px var(--glow); }
+  .btn-ghost { background: rgba(255,255,255,0.04); color: var(--fg); border-color: var(--border-hi); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: var(--accent); }
+
+  /* hero visual */
+  .hero-visual {
+    position: relative; aspect-ratio: 1; max-width: 420px; margin-left: auto;
+  }
+  .code-card {
+    position: absolute; inset: 0; border-radius: 24px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+    border: 1px solid var(--border-hi);
+    backdrop-filter: blur(20px); padding: 24px;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6);
+    overflow: hidden;
+  }
+  .code-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(124,92,255,0.15), transparent 50%);
+    pointer-events: none;
+  }
+  .code-header { display: flex; gap: 8px; margin-bottom: 18px; }
+  .code-header span { width: 12px; height: 12px; border-radius: 50%; }
+  .code-header span:nth-child(1){background:#ff5f57;} .code-header span:nth-child(2){background:#febc2e;} .code-header span:nth-child(3){background:#28c840;}
+  .code-body { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; color: var(--muted); }
+  .code-body .kw { color: var(--accent); }
+  .code-body .str { color: var(--accent-3); }
+  .code-body .num { color: var(--accent-2); }
+  .code-body .cmt { color: var(--dim); font-style: italic; }
+  .code-body .line { display: block; }
+  .float-chip {
+    position: absolute; padding: 10px 14px; border-radius: 12px;
+    background: rgba(22,22,31,0.85); border: 1px solid var(--border-hi);
+    backdrop-filter: blur(12px); font-size: 13px; font-weight: 600;
+    box-shadow: 0 12px 30px -8px rgba(0,0,0,0.5);
+    animation: chip 6s ease-in-out infinite;
+  }
+  .float-chip.c1 { top: -18px; right: 20px; animation-delay: 0s; }
+  .float-chip.c2 { bottom: 40px; left: -24px; animation-delay: -3s; }
+  @keyframes chip { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 40px 0 0; }
+  .stat { padding: 18px 20px; border-radius: 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); }
+  .stat .n { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
+  .stat .l { font-size: 13px; color: var(--muted); }
+
+  /* section */
+  section { padding: 100px 0; }
+  .section-head { margin-bottom: 56px; max-width: 640px; }
+  .section-head .tag {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .section-head h2 { font-size: clamp(32px,4.5vw,48px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+  .section-head p { color: var(--muted); font-size: 17px; }
+
+  /* about */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .about-card {
+    padding: 32px; border-radius: 20px; background: var(--card);
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+  }
+  .about-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+  .about-card p { color: var(--muted); }
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .about-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); }
+  .about-list li .ic {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 10px;
+    background: rgba(124,92,255,0.12); border: 1px solid rgba(124,92,255,0.3);
+    display: grid; place-items: center; font-size: 16px;
+  }
+  .about-list li strong { color: var(--fg); font-weight: 600; }
+
+  /* projects */
+  .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+  .project {
+    position: relative; padding: 28px; border-radius: 20px;
+    background: var(--card); border: 1px solid var(--border);
+    transition: all .3s; overflow: hidden; display: flex; flex-direction: column;
+    min-height: 300px;
+  }
+  .project:hover { transform: translateY(-6px); border-color: var(--border-hi); box-shadow: 0 20px 50px -20px rgba(0,0,0,0.6); }
+  .project::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--p-accent, var(--accent)); opacity: 0.8;
+  }
+  .project .icon {
+    width: 52px; height: 52px; border-radius: 14px; margin-bottom: 20px;
+    display: grid; place-items: center; font-size: 24px;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  }
+  .project h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .project .desc { color: var(--muted); font-size: 14.5px; flex: 1; margin-bottom: 20px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--border-hi); background: rgba(255,255,255,0.04); color: var(--muted);
+    width: fit-content;
+  }
+  .badge.soon { color: var(--accent-2); border-color: rgba(255,92,138,0.4); background: rgba(255,92,138,0.08); }
+  .badge.soon::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); animation: pulse 1.6s infinite; }
+  .badge.live { color: var(--accent-3); border-color: rgba(92,255,177,0.4); background: rgba(92,255,177,0.08); }
+  .badge.live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-3); }
+  .project .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; }
+  .project .arrow {
+    width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted);
+    transition: all .2s; font-size: 16px;
+  }
+  .project:hover .arrow { background: var(--accent); color: #fff; border-color: var(--accent); transform: rotate(-45deg); }
+  .project.coming { opacity: 0.92; }
+
+  /* secret hint */
+  .secret {
+    margin-top: 60px; padding: 24px 28px; border-radius: 16px;
+    background: linear-gradient(120deg, rgba(124,92,255,0.08), rgba(255,92,138,0.08));
+    border: 1px dashed var(--border-hi); color: var(--muted); font-size: 14px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .secret code { font-family: 'JetBrains Mono', monospace; color: var(--fg); background: rgba(0,0,0,0.4); padding: 3px 8px; border-radius: 6px; font-size: 13px; }
+
+  /* contact */
+  .contact { text-align: center; }
+  .contact h2 { font-size: clamp(32px,4.5vw,48px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .contact p { color: var(--muted); font-size: 17px; margin-bottom: 32px; }
+  .socials { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .social {
+    padding: 12px 18px; border-radius: 12px; background: var(--card); border: 1px solid var(--border);
+    color: var(--fg); text-decoration: none; font-weight: 500; font-size: 14px;
+    transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .social:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  footer {
+    padding: 40px 0; border-top: 1px solid var(--border); color: var(--dim); font-size: 13px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { margin: 0 auto; max-width: 340px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="bg-grid"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+
+<nav>
+  <div class="container inner">
+    <div class="logo">
+      <div class="logo-mark">cm</div>
+      <span>the-creative-master</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://github.com/the-creative-master" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow reveal"><span class="dot"></span> Welcome to my corner of the internet</div>
+        <h1 class="reveal">Hi, I'm <span class="grad">the-creative-master.</span></h1>
+        <p class="lead reveal">
+          A <strong>programmer from the Middle East</strong> who builds <strong>very interesting, very useful websites</strong> —
+          powered by AI and a lot of curiosity. This is the hub where all of them live.
+        </p>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="#projects">Explore projects ↓</a>
+          <a class="btn btn-ghost" href="https://github.com/the-creative-master" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="n">3+</div><div class="l">Projects shipped</div></div>
+          <div class="stat"><div class="n">AI</div><div class="l">Powered builds</div></div>
+          <div class="stat"><div class="n">∞</div><div class="l">Ideas in progress</div></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="code-card">
+          <div class="code-header"><span></span><span></span><span></span></div>
+          <div class="code-body">
+            <span class="line"><span class="cmt">// whoami</span></span>
+            <span class="line"><span class="kw">const</span> me = {</span>
+            <span class="line">  name: <span class="str">"the-creative-master"</span>,</span>
+            <span class="line">  role: <span class="str">"programmer"</span>,</span>
+            <span class="line">  home: <span class="str">"Middle East"</span>,</span>
+            <span class="line">  stack: [<span class="str">"AI"</span>, <span class="str">"web"</span>, <span class="str">"ideas"</span>],</span>
+            <span class="line">  makes: <span class="str">"useful websites"</span>,</span>
+            <span class="line">  secret: <span class="num">25</span> + <span class="str">"+"</span></span>
+            <span class="line">};</span>
+            <span class="line"><span class="cmt">// building the future, one site at a time</span></span>
+          </div>
+        </div>
+        <div class="float-chip c1">⚡ AI-built</div>
+        <div class="float-chip c2">🌍 Middle East</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">// about me</span>
+        <h2>A programmer with a thing for useful, interesting websites.</h2>
+        <p>I live in the Middle East and I build websites that are actually useful — not just pretty. AI is my co-pilot, curiosity is my engine.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <h3>What I do</h3>
+          <p>I design and ship web experiences that solve real problems. From tiny utilities to whole programming languages, everything I make is meant to be used, shared, and enjoyed.</p>
+        </div>
+        <ul class="about-list reveal">
+          <li><div class="ic">🤖</div><div><strong>AI-assisted building</strong><br>I use AI as a creative partner to move fast and explore ideas that would otherwise take weeks.</div></li>
+          <li><div class="ic">🌍</div><div><strong>Based in the Middle East</strong><br>Building for a global audience from Sharjah.</div></li>
+          <li><div class="ic">🛠️</div><div><strong>Useful by default</strong><br>Every project has a job to do. If it doesn't help someone, it doesn't ship.</div></li>
+          <li><div class="ic">✨</div><div><strong>Interesting by choice</strong><br>Normal is boring. I like the surprising, the clever, the "wait, you can do that?"</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">// projects</span>
+        <h2>The hub. Every project, one place.</h2>
+        <p>Three (and counting) things I've been building. Click through to explore each one.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project coming reveal" style="--p-accent: var(--accent-2);">
+          <div class="icon">🧰</div>
+          <h3>Utility Bites</h3>
+          <p class="desc">A utility website packed with many good utilities — the kind of tools you reach for every day, all in one place.</p>
+          <div class="foot">
+            <span class="badge soon">Coming soon</span>
+            <div class="arrow">↗</div>
+          </div>
+        </article>
+        <article class="project reveal" style="--p-accent: var(--accent);">
+          <div class="icon">🧮</div>
+          <h3>Calculator</h3>
+          <p class="desc">very normal calculator.... secret code light mode 25+</p>
+          <div class="foot">
+            <span class="badge live">Live</span>
+            <div class="arrow">↗</div>
+          </div>
+        </article>
+        <article class="project reveal" style="--p-accent: var(--accent-3);">
+          <div class="icon">🔤</div>
+          <h3>E++</h3>
+          <p class="desc">A programming language I made that looks like English, reads like English, and is English.</p>
+          <div class="foot">
+            <span class="badge live">Live</span>
+            <div class="arrow">↗</div>
+          </div>
+        </article>
+      </div>
+      <div class="secret reveal">
+        <span style="font-size:20px;">🔐</span>
+        <span>Some projects hide things. The Calculator, for example, has a <code>secret code</code> that unlocks <code>light mode 25+</code>. Try to find it.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container contact">
+      <div class="reveal">
+        <span class="tag">// contact</span>
+        <h2>Let's build something.</h2>
+        <p>Got an idea, a question, or just want to say hi? Find me on GitHub.</p>
+        <div class="socials">
+          <a class="social" href="https://github.com/the-creative-master" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="social" href="#projects">📁 Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:12px;">
+    <span>© 2026 the-creative-master. Built with curiosity & AI.</span>
+    <span>Made in the Middle East 🌍</span>
+  </div>
+</footer>
+
+<script>
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // subtle parallax on orbs
+  let mx=0, my=0;
+  window.addEventListener('mousemove', e => { mx=e.clientX/window.innerWidth; my=e.clientY/window.innerHeight; });
+  (function loop(){
+    document.querySelectorAll('.orb').forEach((o,i)=>{
+      const f=(i+1)*12;
+      o.style.transform = `translate(${(mx-0.5)*f}px, ${(my-0.5)*f}px)`;
+    });
+    requestAnimationFrame(loop);
+  })();
+</script>
+</body>
+</html>

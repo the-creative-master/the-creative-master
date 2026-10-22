@@ -20,9 +20,9 @@ This repository is the **hub for all my websites**. Every project I ship lives h
 A utility website packed with **many good utilities** — the kind of tools you reach for every day, all in one place. Currently in development.
 
 ### 🧮 Calculator — [open it ↗](https://the-creative-master.github.io/Calculator/)
-> very normal calculator.... secret code light mode 25+
+> A very normal calculator that opens unblocked youtube if you go to **Light Mode** and click **2** **5** and **+**
 
-A calculator that's more than it seems. Hidden inside is a **secret code** that unlocks **light mode 25+**. Can you find it? 👀
+A calculator that's more than it seems. Hidden inside is a **secret code** that unlocks **Unblocked Youtube**. Can you find it? 👀
 
 🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
 

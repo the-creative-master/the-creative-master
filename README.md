@@ -14,10 +14,16 @@ This repository is the **hub for all my websites**. Every project I ship lives h
 
 ---
 
-## 🚀 Projects
+## 🚀 My best works
 
-### 🧰 Utility Bites — *Coming Soon*
-A utility website packed with **many good utilities** — the kind of tools you reach for every day, all in one place. Currently in development.
+Not everything I've made, just the ones I'm proudest of.
+
+### ⭐ E++ — [open the IDE ↗](https://the-creative-master.github.io/E-Plus-Plus/)
+> A programming language I made that looks like English, reads like English, and **is** English.
+
+E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++ — and the repo ships a complete online IDE to run it in.
+
+🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
 
 ### 🧮 Calculator — [open it ↗](https://the-creative-master.github.io/Calculator/)
 > A very normal calculator that opens unblocked youtube if you go to **Light Mode** and click **2** **5** and **+**
@@ -26,12 +32,12 @@ A calculator that's more than it seems. Hidden inside is a **secret code** that 
 
 🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
 
-### 🔤 E++ — [open the IDE ↗](https://the-creative-master.github.io/E-Plus-Plus/)
-> A programming language I made that looks like English, reads like English, and **is** English.
+### ♾️ 20w14∞ Hub — [open the hub ↗](https://the-creative-master.github.io/20w14infinite-Hub/)
+> Have you ever felt the urge to find new dimensions in Minecraft's 20w14∞ April Fools Update? Put your abominations up for everyone to see!
 
-E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++ — and the repo ships a complete online IDE to run it in.
+A public archive for dimensions from Minecraft's 20w14∞ April Fools snapshot. Store a dimension's name, the Book & Quill phrase that opens it, screenshots, portal color and entities — no login required.
 
-🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
+🔗 **Live:** [the-creative-master.github.io/20w14infinite-Hub](https://the-creative-master.github.io/20w14infinite-Hub/) · **Repo:** [github.com/the-creative-master/20w14infinite-Hub](https://github.com/the-creative-master/20w14infinite-Hub)
 
 ---
 

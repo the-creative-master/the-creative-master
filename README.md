@@ -32,12 +32,12 @@ A calculator that's more than it seems. Hidden inside is a **secret code** that 
 
 🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
 
-### ♾️ 20w14∞ Hub — [open the hub ↗](https://the-creative-master.github.io/20w14infinite-Hub/)
-> Have you ever felt the urge to find new dimensions in Minecraft's 20w14∞ April Fools Update? Put your abominations up for everyone to see!
+### 💥 Operating System Mayhem — [play it ↗](https://the-creative-master.github.io/Operating-System-Mayhem-/)
+> Have you ever wanted to fight Windows 11 to the death? Or MacOS Tahoe? Now you can >:)
 
-A public archive for dimensions from Minecraft's 20w14∞ April Fools snapshot. Store a dimension's name, the Book & Quill phrase that opens it, screenshots, portal color and entities — no login required.
+A single-file, desktop-first arcade boss rush starring 98 bosses across Windows, macOS and Linux history — complete with Perfect Evade dashes, a custom `.weusearchbtw` boss maker, and an Invert mode culminating in a one-quadrillion-HP Arch Linux.
 
-🔗 **Live:** [the-creative-master.github.io/20w14infinite-Hub](https://the-creative-master.github.io/20w14infinite-Hub/) · **Repo:** [github.com/the-creative-master/20w14infinite-Hub](https://github.com/the-creative-master/20w14infinite-Hub)
+🔗 **Live:** [the-creative-master.github.io/Operating-System-Mayhem-](https://the-creative-master.github.io/Operating-System-Mayhem-/) · **Repo:** [github.com/the-creative-master/Operating-System-Mayhem-](https://github.com/the-creative-master/Operating-System-Mayhem-)
 
 ---
 

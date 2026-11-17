@@ -25,12 +25,12 @@ E++ is a programming language designed to be human-readable first. If you can re
 
 🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
 
-### 🧮 Calculator — [open it ↗](https://the-creative-master.github.io/Calculator/)
-> A very normal calculator that opens unblocked youtube if you go to **Light Mode** and click **2** **5** and **+**
+### 🧰 BiteSizedUtilities — [open it ↗](https://the-creative-master.github.io/BiteSizedUtilities/)
+> Have a bite, have a utility.
 
-A calculator that's more than it seems. Hidden inside is a **secret code** that unlocks **Unblocked Youtube**. Can you find it? 👀
+A growing collection of tiny, useful web tools — open one, use it, get on with your day. No installs, no sign-ups, no nonsense.
 
-🔗 **Live:** [the-creative-master.github.io/Calculator](https://the-creative-master.github.io/Calculator/)
+🔗 **Live:** [the-creative-master.github.io/BiteSizedUtilities](https://the-creative-master.github.io/BiteSizedUtilities/) · **Repo:** [github.com/the-creative-master/BiteSizedUtilities](https://github.com/the-creative-master/BiteSizedUtilities)
 
 ### 💥 Operating System Mayhem — [play it ↗](https://the-creative-master.github.io/Operating-System-Mayhem-/)
 > Have you ever wanted to fight Windows 11 to the death? Or MacOS Tahoe? Now you can >:)

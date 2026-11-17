@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>the-creative-master — weirdly useful websites</title>
-<meta name="description" content="I'm the-creative-master, a programmer from the Middle East building weirdly useful websites. My best works: E++, Calculator and Operating System Mayhem." />
+<meta name="description" content="I'm the-creative-master, a programmer from the Middle East building weirdly useful websites. My best works: E++, BiteSizedUtilities and Operating System Mayhem." />
 <meta name="theme-color" content="#f3eee3" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="the-creative-master — weirdly useful websites" />
-<meta property="og:description" content="A programming language that is English, a very normal calculator, and an arcade boss rush where you fight 98 operating systems to the death." />
+<meta property="og:description" content="A programming language that is English, a box of bite-sized utilities, and an arcade boss rush where you fight 98 operating systems to the death." />
 <meta property="og:url" content="https://the-creative-master.github.io/the-creative-master/" />
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23121212'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='27' font-weight='700' fill='%23c8f53c' text-anchor='middle'%3Ecm%3C/text%3E%3C/svg%3E" />
@@ -67,8 +67,7 @@ button,input{font:inherit;color:inherit}
 .app::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,255,255,.28),transparent 46%)}
 .app.epp{background:var(--ink);color:var(--lime);font-size:calc(var(--s) * .3);letter-spacing:-.06em}
-.app.calc{background:var(--orange);color:var(--ink)}
-.app.calc .g{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--s) * .04) calc(var(--s) * .1);font-size:calc(var(--s) * .26)}
+.app.bsu{background:var(--gold);color:var(--ink);font-size:calc(var(--s) * .5)}
 .app.osm{background:var(--lav);color:var(--ink);font-family:var(--mono);font-weight:700;font-size:calc(var(--s) * .32);letter-spacing:-.05em}
 .badge{position:absolute;top:-7px;right:-7px;z-index:2;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:#ff3b30;color:#fff;
   border:2px solid var(--paper);display:grid;place-items:center;font-family:var(--ui);font-size:11px;font-weight:700}
@@ -288,7 +287,7 @@ h2 em{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
 .caret{display:inline-block;width:.6em;height:1.1em;background:var(--lime);vertical-align:-.2em;animation:blink 1s steps(2,start) infinite}
 @keyframes blink{to{visibility:hidden}}
 
-/* --- Calculator: iPhone mockup + iOS calculator --- */
+/* --- BiteSizedUtilities: iPhone mockup + mini utility demo --- */
 .demo-wrap{position:relative;display:flex;justify-content:center;padding-top:30px}
 .demo-note{position:absolute;top:0;left:4%;font-family:var(--serif);font-style:italic;font-size:22px;transform:rotate(-6deg);z-index:2;
   display:flex;align-items:flex-end;gap:6px}
@@ -307,20 +306,18 @@ h2 em{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
 .batt b{display:block;height:100%;width:78%;background:#fff;border-radius:1.5px}
 .pill-island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:92px;height:27px;border-radius:999px;background:#000;
   box-shadow:0 0 0 1px #111}
-.calc-display{height:118px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;padding:0 6px 10px}
-.calc-expr{font-size:16px;color:rgba(255,255,255,.45);min-height:22px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:rtl}
-.calc-expr span{direction:ltr;unicode-bidi:bidi-override}
-.calc-out{font-weight:300;font-size:56px;line-height:1.05;letter-spacing:-.03em;white-space:nowrap;max-width:100%;overflow:hidden;font-variant-numeric:tabular-nums;
-  transition:font-size .25s var(--spring)}
-.calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.calc-keys button{aspect-ratio:1;border:0;border-radius:50%;background:var(--ios-dark);color:#fff;font-family:var(--ui);font-size:26px;font-weight:450;
-  cursor:pointer;transition:filter .3s,background .3s,color .3s;-webkit-tap-highlight-color:transparent}
-.calc-keys button:hover{filter:brightness(1.18)}
-.calc-keys button:active,.calc-keys button.hit{filter:brightness(1.55);transition-duration:0s}
-.calc-keys .fn{background:var(--ios-gray);color:#000;font-size:22px;font-weight:500}
-.calc-keys .op,.calc-keys .eq{background:var(--ios-orange);font-size:30px}
-.calc-keys .op.sel{background:#fff;color:var(--ios-orange)}
-.calc-keys .wide{grid-column:span 2;aspect-ratio:auto;border-radius:999px;text-align:left;padding-left:24px}
+.util{display:flex;flex-direction:column;gap:10px;padding-top:4px}
+.util-tabs{display:flex;gap:5px;background:#1c1c1e;border-radius:14px;padding:5px}
+.util-tab{flex:1;border:0;border-radius:10px;padding:8px 2px;background:transparent;color:#98989d;font-family:var(--ui);font-size:12px;font-weight:600;cursor:pointer;transition:background .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.util-tab.active{background:#636366;color:#fff}
+.util-inrow{display:flex;gap:8px}
+.util-in{flex:1;min-width:0;border:0;border-radius:14px;background:#1c1c1e;color:#fff;font-family:var(--ui);font-size:30px;font-weight:600;text-align:right;padding:10px 14px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.util-in:focus{outline:2px solid var(--ios-orange)}
+.util-from{width:78px;border:0;border-radius:14px;background:#1c1c1e;color:var(--ios-orange);font-family:var(--ui);font-size:15px;font-weight:700;padding:0 6px;cursor:pointer}
+.util-out{display:flex;flex-direction:column;gap:6px;min-height:158px}
+.util-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:#1c1c1e}
+.util-row .v{font-family:var(--ui);font-size:16.5px;font-weight:600;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.util-row .u{font-family:var(--mono);font-size:10.5px;font-weight:700;color:#98989d;text-transform:uppercase;letter-spacing:.04em;flex-shrink:0;text-align:right}
 .home-bar{width:96px;height:4px;border-radius:4px;background:rgba(255,255,255,.85);margin:14px auto 0}
 
 /* --- Operating System Mayhem --- */
@@ -459,8 +456,8 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
   .hero-cta .btn{flex:1;justify-content:center}
   .proj{box-shadow:5px 5px 0 var(--ink)}
   .phone{width:100%;max-width:290px}
-  .calc-keys{gap:8px}
-  .calc-keys button{font-size:23px}
+  .util-in{font-size:24px}
+  .util-row .v{font-size:15px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -543,9 +540,9 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
           <span class="t"><b>E++</b><small>A programming language that is English</small></span>
           <span class="chev" aria-hidden="true">›</span>
         </a>
-        <a href="#calc">
-          <span class="app calc" aria-hidden="true"><span class="g"><span>+</span><span>−</span><span>×</span><span>=</span></span></span>
-          <span class="t"><b>Calculator</b><small>very normal calculator....</small></span>
+        <a href="#bsu">
+          <span class="app bsu" aria-hidden="true">🧰</span>
+          <span class="t"><b>BiteSizedUtilities</b><small>bite-sized useful tools</small></span>
           <span class="chev" aria-hidden="true">›</span>
         </a>
         <a href="#osm">
@@ -562,8 +559,8 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
 <div class="marquee-zone" aria-hidden="true">
   <div class="marquee">
     <div class="track">
-      <span>Useful first</span><span>Interesting always</span><span>E++</span><span>Calculator</span><span>Operating System Mayhem</span><span>Secret codes included</span><span>Made in Sharjah</span>
-      <span>Useful first</span><span>Interesting always</span><span>E++</span><span>Calculator</span><span>Operating System Mayhem</span><span>Secret codes included</span><span>Made in Sharjah</span>
+      <span>Useful first</span><span>Interesting always</span><span>E++</span><span>BiteSizedUtilities</span><span>Operating System Mayhem</span><span>Secret codes included</span><span>Made in Sharjah</span>
+      <span>Useful first</span><span>Interesting always</span><span>E++</span><span>BiteSizedUtilities</span><span>Operating System Mayhem</span><span>Secret codes included</span><span>Made in Sharjah</span>
     </div>
   </div>
 </div>
@@ -631,26 +628,26 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
         </div>
       </article>
 
-      <!-- ---------- CALCULATOR ---------- -->
-      <article class="proj reveal" id="calc" aria-labelledby="p-calc">
+      <!-- ---------- BITESIZEDUTILITIES ---------- -->
+      <article class="proj reveal" id="bsu" aria-labelledby="p-bsu">
         <div>
           <div class="proj-meta">
             <span class="pill"><i></i>Live</span>
-            <span class="proj-num">02 / TOTALLY NORMAL</span>
+            <span class="proj-num">02 / UTILITIES</span>
           </div>
           <div class="proj-name">
-            <span class="app calc" aria-hidden="true"><span class="g"><span>+</span><span>−</span><span>×</span><span>=</span></span></span>
-            <h3 id="p-calc">Calculator</h3>
+            <span class="app bsu" aria-hidden="true">🧰</span>
+            <h3 id="p-bsu">BiteSizedUtilities</h3>
           </div>
-          <p class="headline">Does maths. Does other things.</p>
-          <p class="quote">“very normal calculator....”</p>
-          <p class="desc">A clean, fast calculator with proper order of operations, phone-style percent and full keyboard support. Somewhere inside is a <b>secret code that unlocks Unblocked YouTube</b>. Totally normal.</p>
+          <p class="headline">Small tools, served in bites.</p>
+          <p class="quote">“Have a bite, have a utility.”</p>
+          <p class="desc">A growing collection of tiny, useful web tools — open one, use it, get on with your day. No installs, no sign-ups, no nonsense. Fast on any device, because utilities should be.</p>
           <ul class="chips">
-            <li>2 + 3 × 4 = 14</li><li>0.1 + 0.2 = 0.3</li><li>phone-style %</li><li>keyboard support</li><li>installable</li><li>1 secret 👀</li>
+            <li>unit converter</li><li>live demo below ↓</li><li>no installs</li><li>no sign-ups</li><li>phone-friendly</li><li>new tools regularly</li>
           </ul>
           <div class="proj-cta">
-            <a class="btn btn-ink" href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener">Open Calculator <span class="arr ne">↗</span></a>
-            <a class="more" href="https://github.com/the-creative-master/Calculator" target="_blank" rel="noopener">Source on GitHub</a>
+            <a class="btn btn-ink" href="https://the-creative-master.github.io/BiteSizedUtilities/" target="_blank" rel="noopener">Open BiteSizedUtilities <span class="arr ne">↗</span></a>
+            <a class="more" href="https://github.com/the-creative-master/BiteSizedUtilities" target="_blank" rel="noopener">Source on GitHub</a>
           </div>
         </div>
 
@@ -659,7 +656,7 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
             <svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 4c14 2 26 10 32 26"/><path d="M27 26l8 5 3-9"/></svg>
           </span>
           <div class="phone">
-            <div class="screen" role="group" aria-label="Mini calculator demo">
+            <div class="screen" role="group" aria-label="Mini unit converter demo">
               <div class="sbar" aria-hidden="true">
                 <span id="phoneTime">9:41</span>
                 <span class="icons">
@@ -668,24 +665,17 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
                 </span>
               </div>
               <span class="pill-island" aria-hidden="true"></span>
-              <div class="calc-display">
-                <div class="calc-expr" id="calcExpr"><span>&nbsp;</span></div>
-                <div class="calc-out" id="calcOut" aria-live="polite">0</div>
-              </div>
-              <div class="calc-keys" id="calcKeys">
-                <button type="button" class="fn" data-k="C" id="acKey" aria-label="All clear">AC</button>
-                <button type="button" class="fn" data-k="neg" aria-label="Plus minus">+/−</button>
-                <button type="button" class="fn" data-k="%" aria-label="Percent">%</button>
-                <button type="button" class="op" data-k="÷" aria-label="Divide">÷</button>
-                <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
-                <button type="button" class="op" data-k="×" aria-label="Multiply">×</button>
-                <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button>
-                <button type="button" class="op" data-k="−" aria-label="Minus">−</button>
-                <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button>
-                <button type="button" class="op" data-k="+" aria-label="Plus">+</button>
-                <button type="button" class="wide" data-k="0">0</button>
-                <button type="button" data-k="." aria-label="Decimal point">.</button>
-                <button type="button" class="eq" data-k="=" aria-label="Equals">=</button>
+              <div class="util">
+                <div class="util-tabs" id="utilTabs" role="tablist" aria-label="Choose a category">
+                  <button type="button" class="util-tab active" data-cat="length">📏 Length</button>
+                  <button type="button" class="util-tab" data-cat="weight">⚖️ Weight</button>
+                  <button type="button" class="util-tab" data-cat="temp">🌡️ Temp</button>
+                </div>
+                <div class="util-inrow">
+                  <input class="util-in" id="utilIn" type="text" inputmode="decimal" value="1" aria-label="Value to convert" autocomplete="off" spellcheck="false">
+                  <select class="util-from" id="utilFrom" aria-label="Convert from unit"></select>
+                </div>
+                <div class="util-out" id="utilOut" aria-live="polite"></div>
               </div>
               <div class="home-bar" aria-hidden="true"></div>
             </div>
@@ -791,7 +781,7 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
     </a>
     <div class="small-links reveal">
       <a class="btn" href="https://the-creative-master.github.io/E-Plus-Plus/" target="_blank" rel="noopener"><span class="app epp" aria-hidden="true">E++</span>E++ <span class="arr ne">↗</span></a>
-      <a class="btn" href="https://the-creative-master.github.io/Calculator/" target="_blank" rel="noopener"><span class="app calc" aria-hidden="true"><span class="g"><span>+</span><span>−</span><span>×</span><span>=</span></span></span>Calculator <span class="arr ne">↗</span></a>
+      <a class="btn" href="https://the-creative-master.github.io/BiteSizedUtilities/" target="_blank" rel="noopener"><span class="app bsu" aria-hidden="true">🧰</span>BiteSizedUtilities <span class="arr ne">↗</span></a>
       <a class="btn" href="https://the-creative-master.github.io/Operating-System-Mayhem-/" target="_blank" rel="noopener"><span class="app osm" aria-hidden="true">&gt;:)</span>Operating System Mayhem <span class="arr ne">↗</span></a>
     </div>
   </div>
@@ -902,110 +892,82 @@ footer{border-top:var(--bw) solid var(--ink);padding-block:26px}
     el.addEventListener('pointercancel', end);
   });
 
-  /* ---------- iOS-style mini calculator ---------- */
-  var exprEl = $('calcExpr'), outEl = $('calcOut'), acKey = $('acKey'), keys = $('calcKeys');
-  var expr = '', done = false, seq = [];
-  var OPS = '+−×÷';
-  var isOp = function(c){ return OPS.indexOf(c) > -1; };
-  var lastNum = function(){ var m = expr.match(/-?[\d.]+$/); return m ? m[0] : ''; };
+  /* ---------- BiteSizedUtilities: mini unit converter ---------- */
+  var CATS = {
+    length: [['m','meter',1],['cm','centimeter',0.01],['mm','millimeter',0.001],['km','kilometer',1000],['in','inch',0.0254],['ft','foot',0.3048],['yd','yard',0.9144],['mi','mile',1609.344]],
+    weight: [['kg','kilogram',1],['g','gram',0.001],['mg','milligram',0.000001],['t','tonne',1000],['lb','pound',0.45359237],['oz','ounce',0.028349523125]],
+    temp:   [['C','\u00b0Celsius'],['F','\u00b0Fahrenheit'],['K','Kelvin']]
+  };
+  var utilTabs = $('utilTabs'), utilIn = $('utilIn'), utilFrom = $('utilFrom'), utilOut = $('utilOut');
+  var curCat = 'length', curFrom = 'm';
 
-  function fmt(n){
-    if (typeof n !== 'number' || !isFinite(n)) return null;
-    var s = String(parseFloat(n.toPrecision(12)));
-    return s.indexOf('e') > -1 ? null : s;
+  function factor(cat, u){
+    var us = CATS[cat];
+    for (var i = 0; i < us.length; i++) if (us[i][0] === u) return us[i][2];
+    return 1;
   }
-  function evaluate(s){
-    if (!s) return '0';
-    while (s && (isOp(s.slice(-1)) || s.slice(-1) === '.' || s.slice(-1) === '-')) s = s.slice(0, -1);
-    if (!s) return '0';
-    var toks = [], num = '';
-    for (var i = 0; i < s.length; i++){
-      var c = s[i];
-      if (isOp(c)) { toks.push(parseFloat(num)); toks.push(c); num = ''; }
-      else num += c;
+  function toCelsius(u, v){ return u === 'C' ? v : u === 'F' ? (v - 32) * 5 / 9 : v - 273.15; }
+  function fromCelsius(u, c){ return u === 'C' ? c : u === 'F' ? c * 9 / 5 + 32 : c + 273.15; }
+  function convert(cat, from, to, v){
+    if (cat === 'temp') return fromCelsius(to, toCelsius(from, v));
+    return v * factor(cat, from) / factor(cat, to);
+  }
+  function fmtNum(n){
+    if (!isFinite(n)) return '\u2014';
+    var s = String(parseFloat(n.toPrecision(8)));
+    if (s.length > 12) s = n.toExponential(3);
+    return s;
+  }
+  function renderUtil(){
+    var us = CATS[curCat], i, found = false;
+    utilFrom.innerHTML = '';
+    for (i = 0; i < us.length; i++){
+      var o = document.createElement('option');
+      o.value = us[i][0]; o.textContent = us[i][0];
+      if (us[i][0] === curFrom) { o.selected = true; found = true; }
+      utilFrom.appendChild(o);
     }
-    toks.push(parseFloat(num));
-    var st = [toks[0]];
-    for (var j = 1; j < toks.length; j += 2){
-      var op = toks[j], n = toks[j+1];
-      if (op === '×') st[st.length-1] *= n;
-      else if (op === '÷') { if (n === 0) return null; st[st.length-1] /= n; }
-      else st.push(op, n);
+    if (!found) curFrom = us[0][0];
+    var raw = utilIn.value.replace(',', '.').trim();
+    var v = parseFloat(raw);
+    utilOut.innerHTML = '';
+    if (raw === '' || isNaN(v)){
+      utilOut.innerHTML = '<div class="util-row"><span class="v" style="opacity:.5">type a number\u2026</span><span class="u">tap</span></div>';
+      return;
     }
-    var r = st[0];
-    for (var k = 1; k < st.length; k += 2) r = st[k] === '+' ? r + st[k+1] : r - st[k+1];
-    return fmt(r);
-  }
-  function show(text){
-    outEl.textContent = text;
-    var L = text.length;
-    outEl.style.fontSize = L > 11 ? '32px' : L > 8 ? '42px' : '';
-  }
-  function render(prev){
-    exprEl.firstChild.textContent = prev != null ? prev : (expr || '\u00a0');
-    acKey.textContent = expr ? 'C' : 'AC';
-    var lastC = expr.slice(-1);
-    keys.querySelectorAll('.op').forEach(function(b){ b.classList.toggle('sel', !done && isOp(lastC) && b.dataset.k === lastC); });
-    if (done) { show(expr); return; }
-    var r = evaluate(expr);
-    show(r === null ? 'Error' : (expr ? r : '0'));
-  }
-  function press(k){
-    if (/^\d$/.test(k)) {
-      if (done) { expr = ''; done = false; }
-      if (expr.length > 20) return;
-      var ln = lastNum();
-      if (ln === '0' || ln === '-0') expr = expr.slice(0, -1);
-      expr += k;
-    } else if (k === '.') {
-      if (done) { expr = ''; done = false; }
-      var l2 = lastNum();
-      if (l2.indexOf('.') > -1) return;
-      if (!l2 || l2 === '-') expr += '0';
-      expr += '.';
-    } else if (isOp(k)) {
-      done = false;
-      if (!expr || expr === '-') return;
-      if (isOp(expr.slice(-1))) expr = expr.slice(0, -1);
-      expr += k;
-    } else if (k === 'neg') {
-      done = false;
-      var l4 = lastNum();
-      if (!l4) return;
-      var head = expr.slice(0, -l4.length);
-      expr = head + (l4.charAt(0) === '-' ? l4.slice(1) : '-' + l4);
-    } else if (k === '%') {
-      var l3 = lastNum();
-      if (!l3 || l3 === '-') return;
-      var p = fmt(parseFloat(l3) / 100);
-      if (p !== null) { expr = expr.slice(0, -l3.length) + p; done = false; }
-    } else if (k === 'C') {
-      expr = ''; done = false;
-    } else if (k === '=') {
-      if (!expr || done) return;
-      var before = expr, r = evaluate(expr);
-      if (r === null) { expr = ''; done = false; render(before + ' ='); show('Error'); return; }
-      expr = r; done = true; render(before + ' ='); return;
+    var shown = 0, hidden = 0;
+    for (i = 0; i < us.length; i++){
+      if (us[i][0] === curFrom) continue;
+      if (shown < 5){
+        var r = document.createElement('div');
+        r.className = 'util-row';
+        var val = document.createElement('span');
+        val.className = 'v';
+        val.textContent = fmtNum(convert(curCat, curFrom, us[i][0], v));
+        var un = document.createElement('span');
+        un.className = 'u';
+        un.textContent = us[i][1] + ' (' + us[i][0] + ')';
+        r.appendChild(val); r.appendChild(un);
+        utilOut.appendChild(r);
+        shown++;
+      } else hidden++;
     }
-    render();
-  }
-  function egg(k){
-    seq.push(k); if (seq.length > 3) seq.shift();
-    if (seq.join(',') === '2,5,+') {
-      seq = []; expr = ''; done = false;
-      render('25+ ?'); show('nice try 👀');
-      notify('🔐', 'Wrong calculator', 'The secret only works in the real one');
-      return true;
+    if (hidden > 0){
+      var more = document.createElement('div');
+      more.className = 'util-row';
+      more.innerHTML = '<span class="v" style="opacity:.55">\u2026and ' + hidden + ' more</span><span class="u">on the site</span>';
+      utilOut.appendChild(more);
     }
-    return false;
   }
-  keys.addEventListener('click', function(e){
-    var b = e.target.closest('button[data-k]'); if (!b) return;
-    var k = b.dataset.k;
-    if (egg(k)) return;
-    press(k);
+  utilTabs.addEventListener('click', function(e){
+    var t = e.target.closest('.util-tab'); if (!t) return;
+    curCat = t.dataset.cat;
+    utilTabs.querySelectorAll('.util-tab').forEach(function(b){ b.classList.toggle('active', b === t); });
+    renderUtil();
   });
-  render();
+  utilFrom.addEventListener('change', function(){ curFrom = utilFrom.value; renderUtil(); });
+  utilIn.addEventListener('input', renderUtil);
+  renderUtil();
 
   /* ---------- E++ run demo ---------- */
   var runBtn = $('runBtn'), out = $('out');

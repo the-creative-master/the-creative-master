@@ -14,10 +14,10 @@
 
 | Project | What It Does | Live & Code |
 | :--- | :--- | :--- |
-| **⭐ E++** | A programming language that looks, reads, and works like plain English—complete with a full online IDE. | [Live IDE ↗](https://github.io) · [Repo](https://github.com) |
-| **🧰 BiteSizedUtilities** | Fast, lightweight web tools with zero installs, zero sign-ups, and zero paywalls. | [Open App ↗](https://github.io) · [Repo](https://github.com) |
-| **💥 Operating System Mayhem** | Single-file arcade boss rush featuring 98 OS bosses (including a 1-quadrillion-HP Arch Linux). | [Play Game ↗](https://github.io) · [Repo](https://github.com) |
-| **💻 An IDE For Every Language** | Community mission to build an offline `.html` IDE for every coding language in existence. | [Explore Repo ↗](https://github.com) |
+| **⭐ E++** | A programming language that looks, reads, and works like plain English—complete with a full online IDE. | [Live IDE ↗](https://the-creative-master.github.io/E-Plus-Plus) · [Repo](https://github.com/the-creative-master/E-Plus-Plus) |
+| **🧰 BiteSizedUtilities** | Fast, lightweight web tools with zero installs, zero sign-ups, and zero paywalls. | [Open App ↗](https://the-creative-master.github.io/BiteSizedUtilities) · [Repo](https://github.com/the-creative-master/BiteSizedUtilities) |
+| **💥 Operating System Mayhem** | Single-file arcade boss rush featuring 98 OS bosses (including a 1-quadrillion-HP Arch Linux). | [Play Game ↗](https://the-creative-master.github.io/Operating-System-Mayhem-) · [Repo](https://github.com/the-creative-master/Operating-System-Mayhem-) |
+| **💻 An IDE For Every Language** | Community mission to build an offline `.html` IDE for every coding language in existence. | [Explore Repo ↗](https://github.com/the-creative-master/An-IDE-For-Every-Language) |
 
 ---
 

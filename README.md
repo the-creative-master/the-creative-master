@@ -1,70 +1,56 @@
-# 👋 Hi, I'm the-creative-master
+<div align="center">
 
-> A programmer from the **Middle East** who builds **very interesting, very useful websites** — powered by AI and a lot of curiosity.
+<img src="https://demolab.com" alt="Typing SVG" />
 
-I'm a developer who loves turning ideas into working products. AI is my co-pilot, and usefulness is my north star: if something I build doesn't help someone, it doesn't ship. I'm based in **Sharjah** and I build for a global audience.
+<p>
+  <a href="https://github.io">
+    <img src="https://shields.io🌐_LIVE_HUB-Visit_All_My_Sites-00f7ff?style=for-the-badge" alt="Live Hub" />
+  </a>
+  <img src="https://shields.io" alt="Followers" />
+  <img src="https://komarev.com" alt="Profile Views" />
+</p>
 
----
+**Programmer from Sharjah, Middle East** building AI-powered, zero-bloat web utilities and games.
 
-## 🌐 The Hub
-
-This repository is the **hub for all my websites**. Every project I ship lives here, linked and documented in one place.
-
-🔗 **Live hub:** [the-creative-master.github.io/the-creative-master](https://the-creative-master.github.io/the-creative-master)
-
----
-
-## 🚀 My best works
-
-Not everything I've made, just the ones I'm proudest of.
-
-### ⭐ E++ — [open the IDE ↗](https://the-creative-master.github.io/E-Plus-Plus/)
-> A programming language I made that looks like English, reads like English, and **is** English.
-
-E++ is a programming language designed to be human-readable first. If you can read English, you can read (and write) E++ — and the repo ships a complete online IDE to run it in.
-
-🔗 **Live:** [the-creative-master.github.io/E-Plus-Plus](https://the-creative-master.github.io/E-Plus-Plus/)
-
-### 🧰 BiteSizedUtilities — [open it ↗](https://the-creative-master.github.io/BiteSizedUtilities/)
-> Have a bite, have a utility.
-
-A growing collection of tiny, useful web tools — open one, use it, get on with your day. No installs, no sign-ups, no nonsense.
-
-🔗 **Live:** [the-creative-master.github.io/BiteSizedUtilities](https://the-creative-master.github.io/BiteSizedUtilities/) · **Repo:** [github.com/the-creative-master/BiteSizedUtilities](https://github.com/the-creative-master/BiteSizedUtilities)
-
-### 💥 Operating System Mayhem — [play it ↗](https://the-creative-master.github.io/Operating-System-Mayhem-/)
-> Have you ever wanted to fight Windows 11 to the death? Or MacOS Tahoe? Now you can >:)
-
-A single-file, desktop-first arcade boss rush starring 98 bosses across Windows, macOS and Linux history — complete with Perfect Evade dashes, a custom `.weusearchbtw` boss maker, and an Invert mode culminating in a one-quadrillion-HP Arch Linux.
-
-🔗 **Live:** [the-creative-master.github.io/Operating-System-Mayhem-](https://the-creative-master.github.io/Operating-System-Mayhem-/) · **Repo:** [github.com/the-creative-master/Operating-System-Mayhem-](https://github.com/the-creative-master/Operating-System-Mayhem-)
+</div>
 
 ---
 
-## 🛠️ What I work with
+### 🚀 Featured Projects
 
-- 🤖 **AI-assisted development** — moving fast, exploring ideas that would otherwise take weeks
-- 🌐 **Web** — modern, responsive, useful interfaces
-- ✨ **Creative engineering** — surprising, clever, "wait, you can do that?" moments
-- 🛠️ **Utilities** — small tools that solve real problems
-
----
-
-## 📊 GitHub Stats
-
-![the-creative-master's GitHub stats](https://github-readme-stats.vercel.app/api?username=the-creative-master&show_icons=true&theme=tokyonight&hide_border=true)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=the-creative-master&layout=compact&theme=tokyonight&hide_border=true)
+| Project | What It Does | Links |
+| :--- | :--- | :--- |
+| **⭐ E++** | English-based programming language with a full online IDE. | [Live IDE ↗](https://github.io) · [Repo](https://github.com) |
+| **🧰 BiteSizedUtilities** | Fast, lightweight web tools with zero installs or sign-ups. | [Open App ↗](https://github.io) · [Repo](https://github.com) |
+| **💥 Operating System Mayhem** | Single-file arcade boss rush featuring 98 OS bosses. | [Play Game ↗](https://github.io) · [Repo](https://github.com) |
+| **💻 An IDE For Every Language** | Community mission to build an offline `.html` IDE for every coding language. | [Explore Repo ↗](https://github.com) |
 
 ---
 
-## 📫 Get in touch
+### 🛠️ What I Work With
 
-- 🐙 GitHub: [@the-creative-master](https://github.com/the-creative-master)
-- 🌍 Based in Sharjah, Middle East
-
-> *"Normal is boring. I like the surprising, the clever, the 'wait, you can do that?'"*
+<p align="left">
+  <img src="https://shields.ioHTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://shields.ioCSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://shields.ioJavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://shields.ioAI_Co--Pilot-8A2BE2?style=for-the-badge&logo=openai&logoColor=white" />
+</p>
 
 ---
 
-*Built with curiosity & AI.*
+### 📊 GitHub Stats
+
+<div align="center">
+  <img height="175em" src="https://vercel.app" alt="GitHub Stats" />
+  <img height="175em" src="https://vercel.app" alt="Top Languages" />
+</div>
+
+---
+
+<div align="center">
+
+### 📫 Connect & Status
+**Status:** 🫡 Grinding exams · **Twin:** [@UserArham](https://github.com)  
+**Location:** Sharjah, Middle East
+
+</div>

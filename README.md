@@ -4,7 +4,7 @@
 
 **Programmer from Sharjah, Middle East** building AI-powered, zero-bloat web utilities and games.
 
-🌐 **[Visit My Live Project Hub ↗](https://github.io)** · 👥 **60+ Followers** · 📦 **16 Repositories**
+🌐 **[Visit My Live Project Hub ↗](https://the-creative-master.github.io/the-creative-master)** · 👥 **60+ Followers** · 📦 **16 Repositories**
 
 </div>
 
@@ -32,7 +32,7 @@
 ### 📌 Current Status
 
 > 🫡 **Grinding exams** *(might be slightly less active)*  
-> 🤝 **Coding Twin:** [@UserArham](https://github.com)  
+> 🤝 **Coding Twin:** [@UserArham](https://github.com/UserArham)  
 > 📍 **Location:** Sharjah, Middle East
 
 ---
